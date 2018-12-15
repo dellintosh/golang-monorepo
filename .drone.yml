@@ -4,9 +4,11 @@ workspace:
 
 pipeline:
   build:
-    image: alpine:latest
+    environment:
+      - COMPARE_URL=something
+    image: golang:1.11.2
     commands:
-      - apk add --update --no-cache bash curl
+      - env
       - pwd
       - ls -la
       - bash ./build.sh
