@@ -6,5 +6,7 @@ pipeline:
   build:
     image: alpine:latest
     commands:
+      - pwd
+      - ls -la
       - chmod +x ./build.sh
       - ./build.sh
