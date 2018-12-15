@@ -11,5 +11,5 @@ var version = "?"
 func main() {
 	flag.Parse()
 	glog.CopyStandardLogTo("INFO")
-	glog.Infof("Version: %v", version)
+	glog.Infof("Versiony: %v", version)
 }
