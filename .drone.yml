@@ -1,0 +1,10 @@
+workspace:
+  base: /drone/src
+  path: github.com/dellintosh/golang-monorepo
+
+pipeline:
+  build:
+    image: alpine:latest
+    commands:
+      - chmod +x ./build.sh
+      - ./build.sh
