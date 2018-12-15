@@ -5,7 +5,7 @@ workspace:
 pipeline:
   build:
     environment:
-      - COMPARE_URL=something
+      - COMMIT_RANGE=...
     image: golang:1.11.2
     commands:
       - env
