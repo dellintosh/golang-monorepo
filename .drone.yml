@@ -4,8 +4,8 @@ workspace:
 
 pipeline:
   build:
-    environment:
-      - COMMIT_RANGE=...
+    # environment:
+    #   - COMMIT_RANGE=...
     image: golang:1.11.2
     commands:
       - env
