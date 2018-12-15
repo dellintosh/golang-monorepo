@@ -6,7 +6,7 @@ pipeline:
   build:
     image: alpine:latest
     commands:
+      - apk add --update --no-cache bash
       - pwd
       - ls -la
-      - chmod +x ./build.sh
-      - ./build.sh
+      - bash ./build.sh
