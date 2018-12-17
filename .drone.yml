@@ -10,6 +10,6 @@ pipeline:
     image: docker:17.12.0-ce-dind
     commands:
       - env
-      - pwd
+      - apk add --update --no-cache bash curl
       - ls -la
       - bash ./build.sh
