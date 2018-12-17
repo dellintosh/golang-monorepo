@@ -8,8 +8,8 @@ pipeline:
       - CIRCLE_COMPARE_URL=${CI_REPO_LINK}/compare/${CI_PREV_COMMIT_SHA:0:8}...${CI_COMMIT_SHA:0:8}  # TODO: Make this generic
       - CIRCLE_SHA1=${CI_COMMIT_SHA:0:8}
     image: docker:17.12.1-ce-dind
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+    # volumes:
+    #   - /var/run/docker.sock:/var/run/docker.sock
     commands:
       - apk add --update --no-cache git bash curl coreutils make
       - bash ./build.sh
