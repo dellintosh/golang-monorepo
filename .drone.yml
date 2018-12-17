@@ -7,7 +7,7 @@ pipeline:
     environment:
       - CIRCLE_COMPARE_URL=${CI_REPO_LINK}/compare/${CI_PREV_COMMIT_SHA:0:8}...${CI_COMMIT_SHA:0:8}  # TODO: Make this generic
       - CIRCLE_SHA1=${CI_COMMIT_SHA:0:8}
-    image: docker:17.12.0-ce-dind
+    image: docker:18:06-git
     commands:
       - env
       - apk add --update --no-cache bash curl
