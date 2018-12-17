@@ -5,8 +5,8 @@ workspace:
 pipeline:
   build:
     environment:
-      - CIRCLE_COMPARE_URL=${CI_REPO_LINK}/compare/${CI_PREV_COMMIT_SHA:0:7}...${CI_COMMIT_SHA:0:7}  # TODO: Make this generic
-      - CIRCLE_SHA1=${CI_COMMIT_SHA:0:7}
+      - CIRCLE_COMPARE_URL=${CI_REPO_LINK}/compare/${CI_PREV_COMMIT_SHA:0:8}...${CI_COMMIT_SHA:0:8}  # TODO: Make this generic
+      - CIRCLE_SHA1=${CI_COMMIT_SHA:0:8}
     image: golang:1.11.2
     commands:
       - env
