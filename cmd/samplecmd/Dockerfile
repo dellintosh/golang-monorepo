@@ -1,4 +1,4 @@
-FROM golang:1.11.2 AS build
+FROM golang:1.11.2
 ARG version
 COPY go.* /go/src/github.com/flowerinthenight/golang-monorepo/
 COPY pkg/ /go/src/github.com/flowerinthenight/golang-monorepo/pkg/
@@ -10,6 +10,6 @@ RUN GO111MODULE=on GOFLAGS=-mod=vendor CGO_ENABLED=0 GOOS=linux go build -v -ldf
 FROM alpine:3.8
 RUN apk --no-cache add ca-certificates
 WORKDIR /samplecmd/
-COPY --from=build /go/src/github.com/flowerinthenight/golang-monorepo/cmd/samplecmd .
+COPY --from=0 /go/src/github.com/flowerinthenight/golang-monorepo/cmd/samplecmd .
 ENTRYPOINT ["/samplecmd/samplecmd"]
 CMD ["--logtostderr"]
