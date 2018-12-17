@@ -10,6 +10,6 @@ pipeline:
     image: docker:18.09-git
     commands:
       - env
-      - apk add --update --no-cache bash curl
+      - apk add --update --no-cache bash curl coreutils
       - ls -la
       - bash ./build.sh
