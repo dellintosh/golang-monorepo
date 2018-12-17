@@ -5,10 +5,10 @@ workspace:
 pipeline:
   build:
     environment:
-      - COMPARATIVE_URL=${DRONE_REPO_LINK}/compare/${DRONE_PREV_COMMIT_SHA}...${DRONE_COMMIT_SHA}
+      - CIRCLE_COMPARE_URL=${CI_REPO_LINK}/compare/${CI_PREV_COMMIT_SHA:0:7}...${CI_COMMIT_SHA:0:7}  # TODO: Make this generic
+      - CIRCLE_SHA1=${CI_COMMIT_SHA:0:7}
     image: golang:1.11.2
     commands:
-      - export CIRCLE_COMPARE_URL=${DRONE_REPO_LINK}/compare/${DRONE_PREV_COMMIT_SHA}...${DRONE_COMMIT_SHA}
       - env
       - pwd
       - ls -la
